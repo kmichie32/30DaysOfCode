@@ -20,6 +20,89 @@ public class Car {
 
     int numberOfPeopleInCar = 1;
 
+    //Setters and getters
+
+    public int getMaxSpeed() {
+        return this.maxSpeed;
+    }
+
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
+    public int getMinSpeed() {
+        return this.minSpeed;
+    }
+
+    public void setMinSpeed(int minSpeed) {
+        this.minSpeed = minSpeed;
+    }
+
+    public double getWeight() {
+        return this.weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public boolean isTheCarOn() {
+        return this.isTheCarOn;
+    }
+
+    public void setTheCarOn(boolean theCarOn) {
+        isTheCarOn = theCarOn;
+    }
+
+    public char getCondition() {
+        return this.condition;
+    }
+
+    public void setCondition(char condition) {
+        this.condition = condition;
+    }
+
+    public String getNameOfCar() {
+        return this.nameOfCar;
+    }
+
+    public void setNameOfCar(String nameOfCar) {
+        this.nameOfCar = nameOfCar;
+    }
+
+    public double getMaxFuel() {
+        return this.maxFuel;
+    }
+
+    public void setMaxFuel(double maxFuel) {
+        this.maxFuel = maxFuel;
+    }
+
+    public double getCurrentFuel() {
+        return this.currentFuel;
+    }
+
+    public void setCurrentFuel(double currentFuel) {
+        this.currentFuel = currentFuel;
+    }
+
+    public double getMpg() {
+        return mpg;
+    }
+
+    public void setMpg(double mpg) {
+        this.mpg = mpg;
+    }
+
+    public int getNumberOfPeopleInCar() {
+        return numberOfPeopleInCar;
+    }
+
+    public void setNumberOfPeopleInCar(int numberOfPeopleInCar) {
+        this.numberOfPeopleInCar = numberOfPeopleInCar;
+    }
+
+
     //This is a method
     public void printVariables(){
 
@@ -40,8 +123,7 @@ public class Car {
 
     //This is also a method
     public void upgradeMinSpeed(){
-        minSpeed = maxSpeed; //Sets minSpeed to current maxSpeed
-        maxSpeed = maxSpeed + 1; //Sets maxSpeed to 101 while minSpeed is 100;
+     setMaxSpeed(getMaxSpeed() + 10);
     }
 
     //This is definitely a method
@@ -53,7 +135,12 @@ public class Car {
     public void fixedCar() { condition = 'A';}
 
     public void getOut(){
-        numberOfPeopleInCar--;
+        if(this.numberOfPeopleInCar > 0){
+            numberOfPeopleInCar--;
+        }
+        else{
+            System.out.println("No one is in the car " + numberOfPeopleInCar);
+        }
     }
 
     public void getIn(){
@@ -66,6 +153,15 @@ public class Car {
 
     public double maxMilesPerFillUp(){
         return maxFuel * mpg;
+    }
+
+    public void turnTheCarOn(){
+        if(!isTheCarOn){
+            isTheCarOn = true;
+        }
+        else{
+            System.out.println("The car is already on" + isTheCarOn);
+        }
     }
 
     public static void main(String[] args) {
